@@ -100,6 +100,7 @@ int main(int argc, const char **argv) {
     }
   } else {
     LineEditor LE("clang-query");
+    LE.setRightPrompt("parens:");
     LE.setListCompleter([&QS](StringRef Line, size_t Pos) {
       return QueryParser::complete(Line, Pos, QS);
     });
